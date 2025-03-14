@@ -8,6 +8,14 @@
 [build.environment]
   PYTHON_VERSION = "3.9"
 
+# Install Python dependencies during build
+[build.lifecycle]
+  onBuild = """
+    echo 'Installing Python dependencies' && 
+    pip install -r functions/predict/requirements.txt && 
+    echo 'Installation complete' && 
+    ls -alh functions/predict/
+  """
 
 # Define function directory and bundler
 [functions]
@@ -18,12 +26,11 @@
 [functions."predict"]
   included_files = [
     "functions/predict/model.py",
-    "functions/predict/model.pth"
+    "functions/predict/predict.js",
+    "functions/predict/model.pth",
+    "functions/predict/handler.py"
   ]
 
 # Next.js plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[build.lifecycle]
-  onBuild = "echo 'Installing Python dependencies' && pip install -r functions/predict/requirements.txt && echo 'Installation complete' && ls -alh functions/predict/"
