@@ -2,7 +2,7 @@
 [build]
   command = "python3 --version && npm run build"
   publish = ".next"
-  functions = "functions"
+  functions = "functions"  # This should point to the root functions directory
 
 # Set Python version for the build environment
 [build.environment]
@@ -26,7 +26,6 @@
 [functions."predict"]
   included_files = [
     "functions/predict/model.py",
-    "functions/predict/predict.js",
     "functions/predict/model.pth",
     "functions/predict/handler.py"
   ]

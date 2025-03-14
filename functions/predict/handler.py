@@ -13,7 +13,7 @@ def handler(event, context):
         print(f"Model file path: {model_path}", file=sys.stderr)
         
         # Run your model.py with the correct paths
-        result = subprocess.run([python_executable, 'model.py', model_path], capture_output=True, text=True)
+        result = subprocess.run([python_executable, 'model.py'], capture_output=True, text=True)
         print(f"Python script output: {result.stdout}", file=sys.stderr)
         return {
             "statusCode": 200,
