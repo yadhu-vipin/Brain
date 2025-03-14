@@ -58,7 +58,6 @@ export default function MediaUploadSection() {
 
         console.log("Backend response:", data);
 
-
         if (response.ok) {
           setResult("Analysis complete!");
           setPrediction(data.prediction);
@@ -70,7 +69,7 @@ export default function MediaUploadSection() {
       if (file) {
         reader.readAsDataURL(file);
       }
-    } catch (error) {
+    } catch {
       setResult("Connection error. Please check your network.");
     } finally {
       setIsScanning(false);
