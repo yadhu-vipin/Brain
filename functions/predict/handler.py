@@ -1,20 +1,20 @@
 import os
 import subprocess
+import sys
 
 def handler(event, context):
     python_executable = os.getenv('PYTHON_PATH', 'python3')
     try:
-        # Get the current directory where the handler.py is running
-        current_directory = os.path.dirname(__file__)
-        # Construct the path to model.pth
-        model_path = os.path.join(current_directory, 'model.pth')
-
-        # Log the paths for debugging
-        print(f"Using Python executable: {python_executable}")
-        print(f"Model file path: {model_path}")
+        # Log the current working directory and file paths
+        print(f"Using Python executable: {python_executable}", file=sys.stderr)
+        print(f"Current working directory: {os.getcwd()}", file=sys.stderr)
+        
+        model_path = os.path.join(os.path.dirname(__file__), 'model.pth')
+        print(f"Model file path: {model_path}", file=sys.stderr)
         
         # Run your model.py with the correct paths
         result = subprocess.run([python_executable, 'model.py', model_path], capture_output=True, text=True)
+        print(f"Python script output: {result.stdout}", file=sys.stderr)
         return {
             "statusCode": 200,
             "body": result.stdout,
@@ -23,6 +23,11 @@ def handler(event, context):
         return {
             "statusCode": 500,
             "body": f"File not found error: {fnf_error}",
+        }
+    except subprocess.CalledProcessError as cpe_error:
+        return {
+            "statusCode": 500,
+            "body": f"Called process error: {cpe_error}",
         }
     except Exception as e:
         return {
