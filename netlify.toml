@@ -8,9 +8,6 @@
 [build.environment]
   PYTHON_VERSION = "3.9"
 
-# Install Python dependencies during build
-[build.lifecycle]
-  onBuild = "pip install -r functions/predict/requirements.txt"
 
 # Define function directory and bundler
 [functions]
