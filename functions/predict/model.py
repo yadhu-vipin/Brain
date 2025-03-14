@@ -1,15 +1,18 @@
+import streamlit as st
+import torch
+import torchvision.transforms as transforms
+import torchvision.models as models
+from PIL import Image
+import torch.nn as nn  
 import sys
 import json
 import base64
-import torch
-import torchvision.models as models
 from torchvision import transforms
-from PIL import Image
 import io
 import os
 
 # Define class labels
-CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"]
+class_labels = ["Glioma Tumor", "Meningioma Tumor", "No Tumor", "Pituitary Tumor"]
 
 script_dir = os.path.dirname(__file__)
 
@@ -24,12 +27,14 @@ def load_model():
     try:
         model = models.resnet50(pretrained=False)
         num_ftrs = model.fc.in_features
-        model.fc = torch.nn.Linear(num_ftrs, len(CLASSES))
+        model.fc = nn.Linear(num_ftrs, len(class_labels))
         model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
         model.eval()
         return model
     except Exception as e:
         return {"error": f"Failed to load model: {str(e)}"}
+
+model = load_model()
 
 # Define image transformations
 def get_transforms():
@@ -39,10 +44,11 @@ def get_transforms():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
 
+transform = get_transforms()
+
 # Process the image and predict
 def predict(image_bytes):
     try:
-        transform = get_transforms()
         image = Image.open(io.BytesIO(image_bytes))
 
         # Ensure image is in RGB format
@@ -51,7 +57,6 @@ def predict(image_bytes):
 
         image_tensor = transform(image).unsqueeze(0)
 
-        model = load_model()
         if isinstance(model, dict):  # Return error if model failed to load
             return model
 
@@ -62,10 +67,10 @@ def predict(image_bytes):
             _, predicted_idx = torch.max(outputs, 1)
 
         prediction = {
-            "prediction": CLASSES[predicted_idx.item()],
+            "prediction": class_labels[predicted_idx.item()],
             "class_id": predicted_idx.item(),
             "confidence": round(float(probabilities[predicted_idx.item()]) * 100, 2),
-            "all_probabilities": {CLASSES[i]: round(float(probabilities[i]) * 100, 2) for i in range(len(CLASSES))}
+            "all_probabilities": {class_labels[i]: round(float(probabilities[i]) * 100, 2) for i in range(len(class_labels))}
         }
 
         return prediction

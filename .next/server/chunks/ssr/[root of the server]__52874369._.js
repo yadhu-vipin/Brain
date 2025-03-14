@@ -181,7 +181,7 @@ function MediaUploadSection() {
             if (file) {
                 reader.readAsDataURL(file);
             }
-        } catch (error) {
+        } catch  {
             setResult("Connection error. Please check your network.");
         } finally{
             setIsScanning(false);
@@ -235,7 +235,7 @@ function MediaUploadSection() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/app/Holo-upload.tsx",
-                            lineNumber: 90,
+                            lineNumber: 89,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -257,7 +257,7 @@ function MediaUploadSection() {
                                     className: "absolute inset-0 z-10"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 128,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
@@ -271,18 +271,18 @@ function MediaUploadSection() {
                                         type: "video/mp4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 133,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 130,
+                                    lineNumber: 129,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/Holo-upload.tsx",
-                            lineNumber: 123,
+                            lineNumber: 122,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -303,7 +303,7 @@ function MediaUploadSection() {
                                     children: "Brainiac AI"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 143,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -311,24 +311,24 @@ function MediaUploadSection() {
                                     children: "Revolutionary neural tumor detection"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 146,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/Holo-upload.tsx",
-                            lineNumber: 138,
+                            lineNumber: 137,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/Holo-upload.tsx",
-                    lineNumber: 84,
+                    lineNumber: 83,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/Holo-upload.tsx",
-                lineNumber: 82,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -362,7 +362,7 @@ function MediaUploadSection() {
                                                     children: "Brain Tumor Detection"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 163,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -370,23 +370,23 @@ function MediaUploadSection() {
                                                     children: "Advanced AI-powered neural analysis for medical professionals"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 166,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 162,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -402,12 +402,12 @@ function MediaUploadSection() {
                                                         children: "Image Input"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 176,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 175,
                                                     columnNumber: 17
                                                 }, this),
                                                 activeDemoTab === "upload" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -425,12 +425,12 @@ function MediaUploadSection() {
                                                                     type: "video/mp4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 185,
+                                                                    lineNumber: 184,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 184,
+                                                                lineNumber: 183,
                                                                 columnNumber: 25
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "w-full h-full flex items-center justify-center bg-gray-900",
@@ -443,7 +443,7 @@ function MediaUploadSection() {
                                                                     unoptimized: true
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 190,
+                                                                    lineNumber: 189,
                                                                     columnNumber: 29
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "text-gray-500 text-center p-4",
@@ -452,30 +452,30 @@ function MediaUploadSection() {
                                                                             className: "w-12 h-12 mx-auto mb-2"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                            lineNumber: 200,
+                                                                            lineNumber: 199,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             children: "No image selected"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                            lineNumber: 201,
+                                                                            lineNumber: 200,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 199,
+                                                                    lineNumber: 198,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 188,
+                                                                lineNumber: 187,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 182,
+                                                            lineNumber: 181,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -485,14 +485,14 @@ function MediaUploadSection() {
                                                                     className: "mr-2 w-5 h-5 text-blue-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 209,
+                                                                    lineNumber: 208,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "Choose MRI Image"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 210,
+                                                                    lineNumber: 209,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -502,13 +502,13 @@ function MediaUploadSection() {
                                                                     onChange: handleFileUpload
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 211,
+                                                                    lineNumber: 210,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 208,
+                                                            lineNumber: 207,
                                                             columnNumber: 21
                                                         }, this),
                                                         fileName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -520,12 +520,12 @@ function MediaUploadSection() {
                                                                         className: "w-4 h-4 text-blue-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                        lineNumber: 217,
+                                                                        lineNumber: 216,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 216,
+                                                                    lineNumber: 215,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -538,18 +538,18 @@ function MediaUploadSection() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                        lineNumber: 220,
+                                                                        lineNumber: 219,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                    lineNumber: 219,
+                                                                    lineNumber: 218,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 215,
+                                                            lineNumber: 214,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
@@ -569,14 +569,14 @@ function MediaUploadSection() {
                                                                 className: "mr-2 w-5 h-5 animate-spin"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 239,
+                                                                lineNumber: 238,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Scanning..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 240,
+                                                                lineNumber: 239,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
@@ -586,27 +586,27 @@ function MediaUploadSection() {
                                                                 className: "mr-2 w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 244,
+                                                                lineNumber: 243,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Start Scan"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 245,
+                                                                lineNumber: 244,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 227,
+                                                    lineNumber: 226,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 174,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -617,7 +617,7 @@ function MediaUploadSection() {
                                                     children: "Analysis Result"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 251,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -630,7 +630,7 @@ function MediaUploadSection() {
                                                                 children: result
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 257,
+                                                                lineNumber: 256,
                                                                 columnNumber: 23
                                                             }, this),
                                                             prediction && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -641,7 +641,7 @@ function MediaUploadSection() {
                                                                         children: "Detected Tumor Type:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                        lineNumber: 260,
+                                                                        lineNumber: 259,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -649,7 +649,7 @@ function MediaUploadSection() {
                                                                         children: prediction
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                        lineNumber: 261,
+                                                                        lineNumber: 260,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -658,19 +658,19 @@ function MediaUploadSection() {
                                                                         children: "View Details"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                        lineNumber: 262,
+                                                                        lineNumber: 261,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 259,
+                                                                lineNumber: 258,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                        lineNumber: 256,
+                                                        lineNumber: 255,
                                                         columnNumber: 21
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-gray-500 text-center p-4 bg-gray-900 rounded-lg border border-gray-700",
@@ -679,25 +679,25 @@ function MediaUploadSection() {
                                                                 className: "w-12 h-12 mx-auto mb-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 273,
+                                                                lineNumber: 272,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 children: "No results yet. Upload an image and start the scan."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 274,
+                                                                lineNumber: 273,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                        lineNumber: 272,
+                                                        lineNumber: 271,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 254,
+                                                    lineNumber: 253,
                                                     columnNumber: 17
                                                 }, this),
                                                 showResultDetails && prediction && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -720,7 +720,7 @@ function MediaUploadSection() {
                                                             children: "Tumor Type"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 286,
+                                                            lineNumber: 285,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -730,12 +730,12 @@ function MediaUploadSection() {
                                                                 children: prediction
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/Holo-upload.tsx",
-                                                                lineNumber: 288,
+                                                                lineNumber: 287,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 287,
+                                                            lineNumber: 286,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -744,31 +744,31 @@ function MediaUploadSection() {
                                                             children: "Hide Details"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 290,
+                                                            lineNumber: 289,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 280,
+                                                    lineNumber: 279,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                            lineNumber: 251,
+                                            lineNumber: 250,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 174,
+                                    lineNumber: 173,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/Holo-upload.tsx",
-                            lineNumber: 160,
+                            lineNumber: 159,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -779,7 +779,7 @@ function MediaUploadSection() {
                                     children: "Key Benefits"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 305,
+                                    lineNumber: 304,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -803,17 +803,17 @@ function MediaUploadSection() {
                                                             d: "M13 10V3L4 14h7v7l9-11h-7z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 310,
+                                                            lineNumber: 309,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                        lineNumber: 309,
+                                                        lineNumber: 308,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 307,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -821,7 +821,7 @@ function MediaUploadSection() {
                                                     children: "Real-time Analysis"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 313,
+                                                    lineNumber: 312,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -829,13 +829,13 @@ function MediaUploadSection() {
                                                     children: "Rapid detection capabilities reduce diagnosis time from days to seconds."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 314,
+                                                    lineNumber: 313,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 306,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -856,17 +856,17 @@ function MediaUploadSection() {
                                                             d: "M12 6.253v13m0-13C10.832 5.477 9.246 4.75 7.5 4.75a4.5 4.5 0 00-4.5 4.5c0 1.789 0.896 3.221 2.247 4.036A4.495 4.495 0 0012 9.75v7.747c0 1.169.883 2.105 2 2.105a4.5 4.5 0 004.5-4.5c0-1.789-.896-3.221-2.247-4.036A4.495 4.495 0 0012 14.747V6.253z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 320,
+                                                            lineNumber: 319,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                        lineNumber: 319,
+                                                        lineNumber: 318,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 318,
+                                                    lineNumber: 317,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -874,7 +874,7 @@ function MediaUploadSection() {
                                                     children: "Enhanced Accuracy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 322,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -882,13 +882,13 @@ function MediaUploadSection() {
                                                     children: "Achieve up to 98% accuracy in detecting even the smallest tumors."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 324,
+                                                    lineNumber: 323,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                            lineNumber: 317,
+                                            lineNumber: 316,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -909,17 +909,17 @@ function MediaUploadSection() {
                                                             d: "M5 13l4 4L19 7"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                                            lineNumber: 330,
+                                                            lineNumber: 329,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Holo-upload.tsx",
-                                                        lineNumber: 329,
+                                                        lineNumber: 328,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 328,
+                                                    lineNumber: 327,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -927,7 +927,7 @@ function MediaUploadSection() {
                                                     children: "Non-invasive Procedure"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 333,
+                                                    lineNumber: 332,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -935,42 +935,42 @@ function MediaUploadSection() {
                                                     children: "Analyzes existing MRI scans, eliminating the need for invasive biopsies."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                                    lineNumber: 334,
+                                                    lineNumber: 333,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/Holo-upload.tsx",
-                                            lineNumber: 327,
+                                            lineNumber: 326,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/Holo-upload.tsx",
-                                    lineNumber: 306,
+                                    lineNumber: 305,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/Holo-upload.tsx",
-                            lineNumber: 304,
+                            lineNumber: 303,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/Holo-upload.tsx",
-                    lineNumber: 154,
+                    lineNumber: 153,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/Holo-upload.tsx",
-                lineNumber: 153,
+                lineNumber: 152,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/Holo-upload.tsx",
-        lineNumber: 81,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 }
