@@ -10,7 +10,7 @@
 
 # Install Python dependencies during build
 [build.lifecycle]
-  onBuild = "pip install -r requirements.txt"
+  onBuild = "pip install -r functions/predict/requirements.txt"
 
 # Define function directory and bundler
 [functions]
@@ -23,7 +23,6 @@
     "functions/predict/model.py",
     "functions/predict/model.pth"  # Ensure it's in the right directory
   ]
-
 
 # Next.js plugin
 [[plugins]]
