@@ -1,0 +1,30 @@
+# Build settings
+[build]
+  command = "npm run build"
+  publish = ".next"
+  functions = "functions"
+
+# Set Python version for the build environment
+[build.environment]
+  PYTHON_VERSION = "3.9"
+
+# Install Python dependencies during build
+[build.lifecycle]
+  onBuild = "pip install -r requirements.txt"
+
+# Define function directory and bundler
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
+
+# Include specific files for the "predict" function
+[functions."predict"]
+  included_files = [
+    "functions/predict/model.py",
+    "functions/predict/model.pth"  # Ensure it's in the right directory
+  ]
+
+
+# Next.js plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

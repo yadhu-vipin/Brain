@@ -42,40 +42,42 @@ export default function MediaUploadSection() {
     }
   };
 
-  const handleScan = async (file: File) => {
-    setIsScanning(true);
-    setResult("Analyzing image...");
-    
-    const formData = new FormData();
-    formData.append("file", file);
-  
-    try {
-      const response = await fetch("/api/predict", {
+ const handleScan = async () => {
+  setIsScanning(true);
+  setResult("Analyzing image...");
+
+  try {
+    const file = (document.querySelector('input[type="file"]') as HTMLInputElement)?.files?.[0];
+    const reader = new FileReader();
+
+    reader.onloadend = async () => {
+      const base64String = reader.result?.toString().split(",")[1];
+
+      const response = await fetch("/.netlify/functions/predict", {
         method: "POST",
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: base64String }),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
-        console.log("Prediction:", data.prediction);
         setResult("Analysis complete!");
         setPrediction(data.prediction);
       } else {
-        console.error("Error:", data.error || "Failed to fetch prediction");
-        setResult("Analysis failed. Please try again.");
+        setResult(data.error || "Analysis failed. Please try again.");
       }
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error("Error:", error.message || "Something went wrong");
-      } else {
-        console.error("Error:", "Something went wrong");
-      }
-      setResult("Connection error. Please check your network.");
-    } finally {
-      setIsScanning(false);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
     }
-  };
+  } catch (error) {
+    setResult("Connection error. Please check your network.");
+  } finally {
+    setIsScanning(false);
+  }
+};
 
 
 
@@ -237,7 +239,7 @@ export default function MediaUploadSection() {
                   onClick={() => {
                     const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
                     if (fileInput?.files?.[0]) {
-                      handleScan(fileInput.files[0]);
+                      handleScan();
                     }
                   }}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center transition-all shadow-lg"
