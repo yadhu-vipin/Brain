@@ -42,51 +42,40 @@ export default function MediaUploadSection() {
     }
   };
 
-  const handleScan = async () => {
-    if (!fileName) return;
-  
+  const handleScan = async (file: File) => {
     setIsScanning(true);
-    setResult("");
-    setPrediction("");
-    setShowResultDetails(false);
+    setResult("Analyzing image...");
+    
+    const formData = new FormData();
+    formData.append("file", file);
   
     try {
-      // Simulate API call delay for demo purposes (optional - you can remove this)
-      // await new Promise((resolve) => setTimeout(resolve, 1500));
-  
-      const formData = new FormData();
-      const fileInput = document.querySelector("input[type=file]") as HTMLInputElement;
-  
-      if (fileInput.files?.length) {
-        formData.append("file", fileInput.files[0]);
-      } else {
-        throw new Error("No file selected.");
-      }
-  
-      // Call our Next.js API route instead of the Flask server
-      const response = await fetch("/api/model", {
+      const response = await fetch("/api/predict", {
         method: "POST",
         body: formData,
       });
   
-      if (!response.ok) {
-        throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
-      }
-  
       const data = await response.json();
-      
-      // Use the prediction label from the response
-      setPrediction(data.prediction);
-      setResult(`Prediction: ${data.prediction} (Confidence: ${(data.confidence * 100).toFixed(2)}%)`);
-      setShowResultDetails(true);
+  
+      if (response.ok) {
+        console.log("Prediction:", data.prediction);
+        setResult("Analysis complete!");
+        setPrediction(data.prediction);
+      } else {
+        console.error("Error:", data.error || "Failed to fetch prediction");
+        setResult("Analysis failed. Please try again.");
+      }
     } catch (error) {
-      console.error("Scan error:", error);
-      setResult("Error: Unable to process image.");
+      if (error instanceof Error) {
+        console.error("Error:", error.message || "Something went wrong");
+      } else {
+        console.error("Error:", "Something went wrong");
+      }
+      setResult("Connection error. Please check your network.");
     } finally {
       setIsScanning(false);
     }
   };
-
 
 
 
@@ -245,7 +234,12 @@ export default function MediaUploadSection() {
                 ) : null}
 
                 <button
-                  onClick={handleScan}
+                  onClick={() => {
+                    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+                    if (fileInput?.files?.[0]) {
+                      handleScan(fileInput.files[0]);
+                    }
+                  }}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center transition-all shadow-lg"
                   disabled={isScanning || !fileName}
                 >
