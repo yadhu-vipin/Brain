@@ -5,7 +5,6 @@ import { Upload, Brain, Loader, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 
-
 export default function MediaUploadSection() {
   const defaultVideo = "";
   const [mediaSrc, setMediaSrc] = useState<string>(defaultVideo);
@@ -19,19 +18,15 @@ export default function MediaUploadSection() {
   const [showResultDetails, setShowResultDetails] = useState<boolean>(false);
   const ringRef = useRef<HTMLDivElement>(null);
 
-
-  // Show ring immediately but it will start at size 0 and grow
   useEffect(() => {
     setShowRing(true);
   }, []);
-
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const url = URL.createObjectURL(file);
 
-      // Clean up previous file blob URL
       if (mediaSrc !== defaultVideo) URL.revokeObjectURL(mediaSrc);
 
       setMediaSrc(url);
@@ -42,48 +37,48 @@ export default function MediaUploadSection() {
     }
   };
 
- const handleScan = async () => {
-  setIsScanning(true);
-  setResult("Analyzing image...");
+  const handleScan = async () => {
+    setIsScanning(true);
+    setResult("Analyzing image...");
 
-  try {
-    const file = (document.querySelector('input[type="file"]') as HTMLInputElement)?.files?.[0];
-    const reader = new FileReader();
+    try {
+      const file = (document.querySelector('input[type="file"]') as HTMLInputElement)?.files?.[0];
+      const reader = new FileReader();
 
-    reader.onloadend = async () => {
-      const base64String = reader.result?.toString().split(",")[1];
+      reader.onloadend = async () => {
+        const base64String = reader.result?.toString().split(",")[1];
 
-      const response = await fetch("/.netlify/functions/predict", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image: base64String }),
-      });
+        const response = await fetch("/.netlify/functions/predict", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: base64String }),
+        });
 
-      const data = await response.json();
+        const data = await response.json();
 
-      if (response.ok) {
-        setResult("Analysis complete!");
-        setPrediction(data.prediction);
-      } else {
-        setResult(data.error || "Analysis failed. Please try again.");
+        console.log("Backend response:", data);
+
+
+        if (response.ok) {
+          setResult("Analysis complete!");
+          setPrediction(data.prediction);
+        } else {
+          setResult(data.error || "Analysis failed. Please try again.");
+        }
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
       }
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
+    } catch (error) {
+      setResult("Connection error. Please check your network.");
+    } finally {
+      setIsScanning(false);
     }
-  } catch (error) {
-    setResult("Connection error. Please check your network.");
-  } finally {
-    setIsScanning(false);
-  }
-};
-
-
+  };
 
   return (
     <div className="w-screen bg-gradient-to-b from-black via-gray-1200 to-black text-white flex flex-col items-center font-sans">
-      {/* Hero Section with 3D Brain Animation */}
       <AnimatePresence>
         {isIntroVisible && (
           <motion.div
@@ -120,7 +115,7 @@ export default function MediaUploadSection() {
                 transition={{
                   duration: 2,
                   ease: "easeOut",
-                  delay: 0.3 // Start slightly after the video begins dropping
+                  delay: 0.3
                 }}
               ></motion.div>
             )}
@@ -155,7 +150,6 @@ export default function MediaUploadSection() {
         )}
       </AnimatePresence>
 
-      {/* Main Application Section */}
       <div id="brain-tumor-detection" className="flex flex-col items-center justify-center w-full min-h-screen p-6 md:p-12 bg-gray-900">
         <motion.div
           className="w-full max-w-5xl"
@@ -164,7 +158,6 @@ export default function MediaUploadSection() {
           transition={{ duration: 0.8 }}
         >
           <div className="bg-gray-800 rounded-xl shadow-2xl overflow-hidden border border-gray-700">
-            {/* Header */}
             <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-6 border-b border-gray-700">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
@@ -179,12 +172,9 @@ export default function MediaUploadSection() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Left panel - Upload/Image Preview */}
               <div className="lg:col-span-1 p-6 border-r border-gray-700 bg-gray-850">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-semibold text-gray-200">
-                    Image Input
-                  </h2>
+                  <h2 className="text-xl font-semibold text-gray-200">Image Input</h2>
                 </div>
 
                 {activeDemoTab === "upload" ? (
@@ -200,12 +190,11 @@ export default function MediaUploadSection() {
                             <Image
                               src={mediaSrc}
                               alt="MRI Scan"
-                              width={500} // Set appropriate width
-                              height={500} // Set appropriate height
+                              width={500}
+                              height={500}
                               className="max-w-full max-h-full object-contain"
-                              unoptimized={true} // Required for blob URLs
+                              unoptimized={true}
                             />
-
                           ) : (
                             <div className="text-gray-500 text-center p-4">
                               <Upload className="w-12 h-12 mx-auto mb-2" />
@@ -259,23 +248,24 @@ export default function MediaUploadSection() {
                 </button>
               </div>
 
-              {/* Middle panel - Result & Analysis */}
               <div className="lg:col-span-1 p-6 border-r border-gray-700 bg-gray-800">
-                <h2 className="text-xl font-semibold text-gray-200 mb-4">
-                  Analysis Result
-                </h2>
+                <h2 className="text-xl font-semibold text-gray-200 mb-4">Analysis Result</h2>
 
                 <div className="mb-6">
                   {result ? (
                     <div className="bg-gray-700 rounded-lg p-4">
                       <p className="text-gray-300">{result}</p>
                       {prediction && (
-                        <button
-                          onClick={() => setShowResultDetails(true)}
-                          className="mt-3 text-blue-400 hover:text-blue-300 text-sm underline"
-                        >
-                          View Details
-                        </button>
+                        <div className="mt-4">
+                          <h3 className="text-lg font-semibold text-gray-200">Detected Tumor Type:</h3>
+                          <p className="text-sm text-gray-400">{prediction}</p>
+                          <button
+                            onClick={() => setShowResultDetails(true)}
+                            className="mt-3 text-blue-400 hover:text-blue-300 text-sm underline"
+                          >
+                            View Details
+                          </button>
+                        </div>
                       )}
                     </div>
                   ) : (
@@ -304,9 +294,9 @@ export default function MediaUploadSection() {
                       Hide Details
                     </button>
                   </motion.div>
-
                 )}
               </div>
+
             </div>
           </div>
 

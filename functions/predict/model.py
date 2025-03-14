@@ -62,7 +62,7 @@ def predict(image_bytes):
             _, predicted_idx = torch.max(outputs, 1)
 
         prediction = {
-            "class": CLASSES[predicted_idx.item()],
+            "prediction": CLASSES[predicted_idx.item()],
             "class_id": predicted_idx.item(),
             "confidence": round(float(probabilities[predicted_idx.item()]) * 100, 2),
             "all_probabilities": {CLASSES[i]: round(float(probabilities[i]) * 100, 2) for i in range(len(CLASSES))}
