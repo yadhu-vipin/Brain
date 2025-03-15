@@ -1,8 +1,8 @@
 # Build settings
 [build]
-  command = "python3 --version && npm run build"
+  command = "npm run build"
   publish = ".next"
-  functions = "functions"  # This should point to the root functions directory
+  functions = "functions"
 
 # Set Python version for the build environment
 [build.environment]
@@ -11,24 +11,20 @@
 # Install Python dependencies during build
 [build.lifecycle]
   onBuild = """
-    echo 'Installing Python dependencies' && 
-    pip install -r functions/predict/requirements.txt && 
-    echo 'Installation complete' && 
-    ls -alh functions/predict/
+    pip install torch==2.0.1 torchvision==0.15.2 Pillow==9.5.0 numpy==1.24.3
+    ls -la functions/predict/
   """
 
-# Define function directory and bundler
+# Define function bundler
 [functions]
-  directory = "functions"
   node_bundler = "esbuild"
 
 # Include specific files for the "predict" function
-[functions."predict"]
-  included_files = [
-    "functions/predict/model.py",
-    "functions/predict/model.pth",
-    "functions/predict/handler.py"
-  ]
+[[functions.predict.included_files]]
+  pattern = "**/*.py"
+
+[[functions.predict.included_files]]
+  pattern = "**/*.pth"
 
 # Next.js plugin
 [[plugins]]
