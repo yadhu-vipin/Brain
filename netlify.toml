@@ -20,12 +20,11 @@
   node_bundler = "esbuild"
 
 # Include specific files for the "predict" function
-[[functions.predict.included_files]]
-  pattern = "**/*.py"
-
-[[functions.predict.included_files]]
-  pattern = "**/*.pth"
-
+ [functions.predict]
+  included_files = [
+    "**/*.py",
+    "**/*.pth"
+  ]
 # Next.js plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
