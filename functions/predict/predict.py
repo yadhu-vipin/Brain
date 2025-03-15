@@ -14,7 +14,7 @@ CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"]
 script_dir = os.path.dirname(__file__)
 
 # Get the absolute path of the model.pth file relative to the script directory
-model_path = os.path.join(script_dir, "model.pth")
+model_path = os.path.join(script_dir, "predict.pth")
 
 # Log the model path (this will be helpful for debugging)
 print(f"Model path being used: {model_path}", file=sys.stderr)

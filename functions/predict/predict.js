@@ -21,7 +21,7 @@ exports.handler = async function (event, context) {
     }
 
     // Ensure the path works correctly on Netlify
-    const pythonScriptPath = path.resolve(__dirname, "model.py");
+    const pythonScriptPath = path.resolve(__dirname, "predict.py");
     console.log("Using Python script at:", pythonScriptPath);
 
     const result = await runPythonScript(pythonScriptPath, imageBase64);
