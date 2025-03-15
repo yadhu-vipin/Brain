@@ -14,7 +14,7 @@ CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"]
 script_dir = os.path.dirname(__file__)
 
 # Get the absolute path of the model.pth file relative to the script directory
-model_path = os.path.join(script_dir, "predict.pth")
+model_path = os.path.join(script_dir, "model.pth")
 
 # Log the model path (this will be helpful for debugging)
 print(f"Model path being used: {model_path}", file=sys.stderr)
@@ -22,7 +22,8 @@ print(f"Model path being used: {model_path}", file=sys.stderr)
 # Load the model
 def load_model():
     try:
-        model = models.resnet50(pretrained=False)
+        model = models.resnet50(weights=None)
+
         num_ftrs = model.fc.in_features
         model.fc = torch.nn.Linear(num_ftrs, len(CLASSES))
         model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
