@@ -1,10 +1,38 @@
 const path = require("path");
 const fs = require("fs");
+const https = require("https");
 const ort = require("onnxruntime-node");
 const sharp = require("sharp"); // For image preprocessing
 
+// Dropbox direct download link for model.onnx
+const MODEL_URL = "https://www.dropbox.com/scl/fi/xo5kj3k9i5efwvo0gbm8o/model.onnx?rlkey=17q50mqzi1kd8wsoqu9bm1vq8&st=0zh4mbgf&dl=0";
+
 // Class labels
 const CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"];
+
+// Function to download the model from Dropbox
+async function downloadModel(localPath) {
+  return new Promise((resolve, reject) => {
+    if (fs.existsSync(localPath)) {
+      console.log(`Model already exists at ${localPath}`);
+      resolve();
+      return;
+    }
+    console.log(`Downloading model from ${MODEL_URL}`);
+    const file = fs.createWriteStream(localPath);
+    https
+      .get(MODEL_URL, (response) => {
+        response.pipe(file);
+        file.on("finish", () => {
+          file.close(resolve);
+        });
+      })
+      .on("error", (err) => {
+        fs.unlink(localPath, () => reject(err)); // Delete partial file on error
+        console.error("Failed to download the model:", err.message);
+      });
+  });
+}
 
 // Load and preprocess the image
 async function preprocessImage(base64Image) {
@@ -33,13 +61,10 @@ async function preprocessImage(base64Image) {
 
 // Predict using ONNX model
 async function predict(base64Image) {
-  const modelPath = path.join(__dirname, "../../model.onnx");
-  console.log("Resolved model path:", modelPath);
+  const modelPath = path.join(__dirname, "model.onnx"); // Local path for the model
 
-
-if (!fs.existsSync(modelPath)) {
-  throw new Error(`Model file not found at ${modelPath}`);
-}
+  // Download the model if it doesn't exist locally
+  await downloadModel(modelPath);
 
   // Load ONNX model
   const session = await ort.InferenceSession.create(modelPath);
