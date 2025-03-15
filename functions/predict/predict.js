@@ -1,8 +1,74 @@
-const { spawn } = require("child_process");
 const path = require("path");
 const fs = require("fs");
+const ort = require("onnxruntime-node");
+const sharp = require("sharp"); // For image preprocessing
 
-exports.handler = async function (event, context) {
+// Class labels
+const CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"];
+
+// Load and preprocess the image
+async function preprocessImage(base64Image) {
+  const imageBuffer = Buffer.from(base64Image, "base64");
+
+  // Preprocess image using Sharp
+  const resizedImage = await sharp(imageBuffer)
+    .resize(224, 224) // Resize to 224x224
+    .toFormat("jpeg")
+    .raw()
+    .toBuffer();
+
+  // Normalize pixel values (same as in model.py)
+  const mean = [0.485, 0.456, 0.406];
+  const std = [0.229, 0.224, 0.225];
+  const floatArray = new Float32Array(224 * 224 * 3);
+
+  for (let i = 0; i < floatArray.length; i += 3) {
+    floatArray[i] = (resizedImage[i] / 255 - mean[0]) / std[0]; // R channel
+    floatArray[i + 1] = (resizedImage[i + 1] / 255 - mean[1]) / std[1]; // G channel
+    floatArray[i + 2] = (resizedImage[i + 2] / 255 - mean[2]) / std[2]; // B channel
+  }
+
+  return Float32Array.from(floatArray);
+}
+
+// Predict using ONNX model
+async function predict(base64Image) {
+  const modelPath = path.join(__dirname, "../../model.onnx");
+  console.log("Resolved model path:", modelPath);
+
+
+if (!fs.existsSync(modelPath)) {
+  throw new Error(`Model file not found at ${modelPath}`);
+}
+
+  // Load ONNX model
+  const session = await ort.InferenceSession.create(modelPath);
+
+  // Preprocess the image
+  const inputTensor = await preprocessImage(base64Image);
+  const tensor = new ort.Tensor("float32", inputTensor, [1, 3, 224, 224]);
+
+  // Run inference
+  const results = await session.run({ input: tensor });
+  const output = results.output.data;
+
+  // Find the class with the highest confidence
+  const predictedIdx = output.indexOf(Math.max(...output));
+  const confidence = Math.max(...output) * 100;
+
+  // Prepare the response
+  return {
+    prediction: CLASSES[predictedIdx],
+    class_id: predictedIdx,
+    confidence: confidence.toFixed(2),
+    all_probabilities: CLASSES.reduce((acc, label, idx) => {
+      acc[label] = (output[idx] * 100).toFixed(2);
+      return acc;
+    }, {}),
+  };
+}
+
+exports.handler = async function (event) {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -21,116 +87,12 @@ exports.handler = async function (event, context) {
       };
     }
 
-    // Debug directory structure
-    console.log("Current directory:", __dirname);
-    console.log("Available files:", fs.readdirSync(__dirname).join(", "));
-    
-    // Try multiple potential locations for the Python script
-    const potentialPaths = [
-      path.join(__dirname, "src", "model", "model.py"),
-      path.join(__dirname, "../src/model/model.py"),
-      path.resolve(process.cwd(), "src/model/model.py")
-    ];
-    
-    let pythonScriptPath = null;
-    
-    // Check which path exists
-    for (const testPath of potentialPaths) {
-      console.log(`Checking path: ${testPath}`);
-      if (fs.existsSync(testPath)) {
-        pythonScriptPath = testPath;
-        console.log(`Found Python script at: ${pythonScriptPath}`);
-        break;
-      }
-    }
-    
-    if (!pythonScriptPath) {
-      // If script isn't found, create it on the fly (backup plan)
-      pythonScriptPath = path.join(__dirname, "temp_model.py");
-      
-      // Python script based on actual model.py but with fallback functionality
-      const pythonScriptContent = `
-import sys
-import json
-import base64
-import io
-from PIL import Image
-import os
-
-# Define class labels (same as original)
-CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"]
-
-script_dir = os.path.dirname(__file__)
-
-# This is a fallback version that simulates the model's behavior
-def fallback_predict(image_bytes):
-    try:
-        # Try to open the image to validate it
-        image = Image.open(io.BytesIO(image_bytes))
-        
-        # In fallback mode, we return a placeholder prediction
-        # In a real scenario, this would be done by the model
-        prediction = {
-            "prediction": "no_tumor",  # Default prediction
-            "class_id": 0,
-            "confidence": 85.75,  # Placeholder confidence score
-            "all_probabilities": {
-                "no_tumor": 85.75,
-                "glioma": 5.25,
-                "meningioma": 4.5,
-                "pituitary": 4.5
-            },
-            "note": "This is a fallback prediction as the model couldn't be loaded."
-        }
-        
-        return prediction
-    except Exception as e:
-        return {"error": f"Failed to process image: {str(e)}"}
-
-if __name__ == "__main__":
-    try:
-        # Read the base64 image data from stdin
-        image_base64 = sys.stdin.read().strip()
-
-        if not image_base64:
-            raise ValueError("No image data received.")
-
-        # Decode the base64 string
-        image_data = base64.b64decode(image_base64)
-
-        # Use fallback prediction since we don't have the model
-        result = fallback_predict(image_data)
-
-        # Output the result as clean JSON
-        print(json.dumps(result))
-
-    except Exception as e:
-        print(json.dumps({"error": str(e)}))
-`;
-      
-      // Write temporary file
-      fs.writeFileSync(pythonScriptPath, pythonScriptContent);
-      console.log(`Created temporary Python script at: ${pythonScriptPath}`);
-    }
-
-    // Check if model file exists alongside script
-    const scriptDir = path.dirname(pythonScriptPath);
-    const modelPath = path.join(scriptDir, "model.pth");
-    
-    if (!fs.existsSync(modelPath)) {
-      console.log(`Warning: Model file not found at ${modelPath}`);
-    } else {
-      console.log(`Found model file at ${modelPath}`);
-    }
-
-    const result = await runPythonScript(pythonScriptPath, imageBase64);
-    console.log("Python script output:", result);
-
-    const parsedResult = JSON.parse(result);
+    // Run prediction
+    const result = await predict(imageBase64);
 
     return {
       statusCode: 200,
-      body: JSON.stringify(parsedResult),
+      body: JSON.stringify(result),
     };
   } catch (error) {
     console.error("Error:", error);
@@ -140,52 +102,3 @@ if __name__ == "__main__":
     };
   }
 };
-
-function runPythonScript(scriptPath, imageBase64) {
-  return new Promise((resolve, reject) => {
-    // Try different Python commands based on environment
-    let pythonCommand = "python";
-    let pythonArgs = [scriptPath];
-    
-    // On Windows local dev, try "py -3" if regular python fails
-    if (process.platform === "win32" && process.env.NETLIFY !== "true") {
-      pythonCommand = "py";
-      pythonArgs = ["-3", scriptPath];
-    }
-    
-    console.log(`Executing: ${pythonCommand} ${pythonArgs.join(" ")}`);
-    
-    const pythonProcess = spawn(pythonCommand, pythonArgs);
-    
-    let result = "";
-    let error = "";
-
-    pythonProcess.stdin.write(imageBase64);
-    pythonProcess.stdin.end();
-
-    pythonProcess.stdout.on("data", (data) => {
-      result += data.toString();
-    });
-
-    pythonProcess.stderr.on("data", (data) => {
-      error += data.toString();
-      console.error("Python stderr:", data.toString());
-    });
-
-    pythonProcess.on("close", (code) => {
-      if (code !== 0) {
-        reject(new Error(`Python script exited with code ${code}: ${error}`));
-      } else {
-        try {
-          resolve(result.trim());
-        } catch (e) {
-          reject(new Error("Failed to parse output: " + e.message));
-        }
-      }
-    });
-
-    pythonProcess.on("error", (err) => {
-      reject(new Error(`Failed to start Python script: ${err.message}`));
-    });
-  });
-}

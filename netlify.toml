@@ -10,7 +10,9 @@
   node_bundler = "esbuild"
 
 [functions.predict]
-  included_files = ["src/model/model.py", "src/model/model.pth" ]
+  external_node_modules = ["onnxruntime-node"]
+  included_files = ["model.onnx"]
+
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
