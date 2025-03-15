@@ -21,7 +21,8 @@ exports.handler = async function (event, context) {
     }
 
     // Ensure the path works correctly on Netlify
-    const pythonScriptPath = path.resolve(__dirname, "predict.py");
+    const pythonScriptPath = path.resolve(__dirname, "../src/model/model.py");
+
     console.log("Using Python script at:", pythonScriptPath);
 
     const result = await runPythonScript(pythonScriptPath, imageBase64);
@@ -45,7 +46,8 @@ exports.handler = async function (event, context) {
 
 function runPythonScript(scriptPath, imageBase64) {
   return new Promise((resolve, reject) => {
-    const pythonProcess = spawn("python", [scriptPath]);
+    const pythonProcess = spawn("python3", [scriptPath]);
+
 
     let result = "";
     let error = "";

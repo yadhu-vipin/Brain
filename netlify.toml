@@ -21,9 +21,8 @@
 
 # Include specific files for the "predict" function
  [functions.predict]
-  included_files = [
-    "**/*.py",
-    "**/*.pth"
+   included_files = [
+    "src/model/*.py"
   ]
 # Next.js plugin
 [[plugins]]
