@@ -8,7 +8,14 @@ const teamMembers = [
   {
     name: "Ayyappadas M T",
     role: "Lead Developer",
-    image: "https://avatars.githubusercontent.com/u/160704510?v=4",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQH7aOdy-2IAww/profile-displayphoto-shrink_400_400/B4EZTa2fdPHcAk-/0/1738838506138?e=1747872000&v=beta&t=t6TM2p8BRruMXgT7UtqcyN4ti2BHrWwmKZKAQmXWFJE",
+    bio: "AI specialist with expertise in machine learning and medical image processing. Passionate about using technology to solve healthcare challenges.",
+    skills: ["Machine Learning", "Python", "TensorFlow", "Medical Imaging"],
+    linkedin: "https://www.linkedin.com/in/ayyappadas-mt-351b252b5/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BdjqV%2FgHCRwm%2FGed%2FTRicEw%3D%3D"
+  },{
+    name: "Vighnesh H",
+    role: "AI/ML",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEgzmJJN2_XVA/profile-displayphoto-shrink_800_800/B56ZTazewbHsAk-/0/1738837718302?e=1747267200&v=beta&t=yhXU_rDrLAWYSGf1U0zjhEm6kOz1iC364Ba3kZ_-7pQ",
     bio: "AI specialist with expertise in machine learning and medical image processing. Passionate about using technology to solve healthcare challenges.",
     skills: ["Machine Learning", "Python", "TensorFlow", "Medical Imaging"],
     linkedin: "https://www.linkedin.com/in/ayyappadas-mt-351b252b5/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BdjqV%2FgHCRwm%2FGed%2FTRicEw%3D%3D"
@@ -152,7 +159,7 @@ export default function AboutUs() {
         Our dedicated team combines expertise in AI, medical imaging, and software development to create innovative solutions for healthcare professionals.
       </motion.p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mx-auto">
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}

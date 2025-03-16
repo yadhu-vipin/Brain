@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 
 export default function MediaUploadSection() {
-  const defaultVideo = "";
+  const defaultVideo = "/vecteezy_rotating-human-brain-electrically-charged_1622898.mp4";
   const [mediaSrc, setMediaSrc] = useState<string>(defaultVideo);
   const [fileName, setFileName] = useState<string>("");
   const [isScanning, setIsScanning] = useState<boolean>(false);
@@ -320,7 +320,7 @@ export default function MediaUploadSection() {
                   </svg>
                 </div>
                 <h3 className="font-medium text-white mb-2">Enhanced Accuracy</h3>
-                <p className="text-sm text-gray-300">Achieve up to 98% accuracy in detecting even the smallest tumors.</p>
+                <p className="text-sm text-gray-300">Achieve up to 95% accuracy in detecting even the smallest tumors.</p>
               </div>
 
               <div className="bg-gradient-to-br from-green-900 to-green-950 p-4 rounded-lg border border-green-800">

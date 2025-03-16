@@ -126,7 +126,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 ;
 ;
 function MediaUploadSection() {
-    const defaultVideo = "";
+    const defaultVideo = "/vecteezy_rotating-human-brain-electrically-charged_1622898.mp4";
     const [mediaSrc, setMediaSrc] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(defaultVideo);
     const [fileName, setFileName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [isScanning, setIsScanning] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -879,7 +879,7 @@ function MediaUploadSection() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-sm text-gray-300",
-                                                    children: "Achieve up to 98% accuracy in detecting even the smallest tumors."
+                                                    children: "Achieve up to 95% accuracy in detecting even the smallest tumors."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Holo-upload.tsx",
                                                     lineNumber: 323,
@@ -996,7 +996,20 @@ const teamMembers = [
     {
         name: "Ayyappadas M T",
         role: "Lead Developer",
-        image: "https://avatars.githubusercontent.com/u/160704510?v=4",
+        image: "https://media.licdn.com/dms/image/v2/D4E03AQH7aOdy-2IAww/profile-displayphoto-shrink_400_400/B4EZTa2fdPHcAk-/0/1738838506138?e=1747872000&v=beta&t=t6TM2p8BRruMXgT7UtqcyN4ti2BHrWwmKZKAQmXWFJE",
+        bio: "AI specialist with expertise in machine learning and medical image processing. Passionate about using technology to solve healthcare challenges.",
+        skills: [
+            "Machine Learning",
+            "Python",
+            "TensorFlow",
+            "Medical Imaging"
+        ],
+        linkedin: "https://www.linkedin.com/in/ayyappadas-mt-351b252b5/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BdjqV%2FgHCRwm%2FGed%2FTRicEw%3D%3D"
+    },
+    {
+        name: "Vighnesh H",
+        role: "AI/ML",
+        image: "https://media.licdn.com/dms/image/v2/D5603AQEgzmJJN2_XVA/profile-displayphoto-shrink_800_800/B56ZTazewbHsAk-/0/1738837718302?e=1747267200&v=beta&t=yhXU_rDrLAWYSGf1U0zjhEm6kOz1iC364Ba3kZ_-7pQ",
         bio: "AI specialist with expertise in machine learning and medical image processing. Passionate about using technology to solve healthcare challenges.",
         skills: [
             "Machine Learning",
@@ -1058,7 +1071,7 @@ function AboutUs() {
                                     children: "Our Story"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 54,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1067,7 +1080,7 @@ function AboutUs() {
                                     children: "Mission"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 60,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1076,18 +1089,18 @@ function AboutUs() {
                                     children: "Technology"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/about.tsx",
-                            lineNumber: 46,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/about.tsx",
-                        lineNumber: 45,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1109,7 +1122,7 @@ function AboutUs() {
                                         children: "Our Story"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 82,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1117,7 +1130,7 @@ function AboutUs() {
                                         children: "Our journey began when we recognized a critical gap in early brain tumor detection technology. Traditional methods were time-consuming and often required specialized expertise that wasn't always available, particularly in underserved communities."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1125,13 +1138,13 @@ function AboutUs() {
                                         children: "By combining our expertise in AI, medical imaging, and user experience design, we've created a solution that empowers healthcare providers to detect brain tumors earlier , and based on which they can create better outcomes of treatment ."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 86,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/about.tsx",
-                                lineNumber: 70,
+                                lineNumber: 77,
                                 columnNumber: 13
                             }, this),
                             activeTab === "mission" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1150,7 +1163,7 @@ function AboutUs() {
                                         children: "Our Mission"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 91,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1158,7 +1171,7 @@ function AboutUs() {
                                         children: "We're on a mission to democratize access to advanced medical diagnostics, making early detection available to all communities regardless of resources or location. We believe that cutting-edge healthcare technology should be accessible to everyone."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1166,13 +1179,13 @@ function AboutUs() {
                                         children: "Our goal is to reduce diagnosis time by 50% while improving accuracy to over 99%, allowing medical professionals to focus on what matters most: patient care and treatment planning."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 102,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/about.tsx",
-                                lineNumber: 86,
+                                lineNumber: 93,
                                 columnNumber: 13
                             }, this),
                             activeTab === "technology" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1191,7 +1204,7 @@ function AboutUs() {
                                         children: "Our Technology"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 107,
+                                        lineNumber: 114,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1199,7 +1212,7 @@ function AboutUs() {
                                         children: "Our AI solution uses a proprietary deep learning algorithm trained on over 100,000 anonymized medical images. The system can detect anomalies that might be missed by the human eye and categorize findings based on urgency and type."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 115,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1223,17 +1236,17 @@ function AboutUs() {
                                                                 d: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/about.tsx",
-                                                                lineNumber: 115,
+                                                                lineNumber: 122,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/about.tsx",
-                                                            lineNumber: 114,
+                                                            lineNumber: 121,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 120,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1241,7 +1254,7 @@ function AboutUs() {
                                                         children: "Deep Learning"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 125,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1249,13 +1262,13 @@ function AboutUs() {
                                                         children: "Advanced neural networks that learn from each scan to continuously improve accuracy."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 126,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/about.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 119,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1276,17 +1289,17 @@ function AboutUs() {
                                                                 d: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/about.tsx",
-                                                                lineNumber: 124,
+                                                                lineNumber: 131,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/about.tsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 130,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 129,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1294,7 +1307,7 @@ function AboutUs() {
                                                         children: "Real-time Analysis"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 134,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1302,37 +1315,37 @@ function AboutUs() {
                                                         children: "Results delivered in seconds, not days, enabling faster medical decisions."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 128,
+                                                        lineNumber: 135,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/about.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 128,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 118,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/about.tsx",
-                                lineNumber: 102,
+                                lineNumber: 109,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/about.tsx",
-                        lineNumber: 68,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/about.tsx",
-                lineNumber: 38,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
@@ -1355,13 +1368,13 @@ function AboutUs() {
                         children: "Team"
                     }, void 0, false, {
                         fileName: "[project]/src/app/about.tsx",
-                        lineNumber: 143,
+                        lineNumber: 150,
                         columnNumber: 18
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/about.tsx",
-                lineNumber: 137,
+                lineNumber: 144,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1379,11 +1392,11 @@ function AboutUs() {
                 children: "Our dedicated team combines expertise in AI, medical imaging, and software development to create innovative solutions for healthcare professionals."
             }, void 0, false, {
                 fileName: "[project]/src/app/about.tsx",
-                lineNumber: 146,
+                lineNumber: 153,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl mx-auto",
+                className: "grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mx-auto",
                 children: teamMembers.map((member, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                         className: "relative group",
                         initial: {
@@ -1403,7 +1416,7 @@ function AboutUs() {
                                 className: "absolute -inset-px bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/about.tsx",
-                                lineNumber: 164,
+                                lineNumber: 171,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1424,7 +1437,7 @@ function AboutUs() {
                                                         unoptimized: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 168,
+                                                        lineNumber: 175,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1444,7 +1457,7 @@ function AboutUs() {
                                                                     d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/about.tsx",
-                                                                    lineNumber: 178,
+                                                                    lineNumber: 185,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -1454,7 +1467,7 @@ function AboutUs() {
                                                                     height: "12"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/about.tsx",
-                                                                    lineNumber: 179,
+                                                                    lineNumber: 186,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -1463,24 +1476,24 @@ function AboutUs() {
                                                                     r: "2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/about.tsx",
-                                                                    lineNumber: 180,
+                                                                    lineNumber: 187,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/about.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 184,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 183,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/about.tsx",
-                                                lineNumber: 167,
+                                                lineNumber: 174,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1490,7 +1503,7 @@ function AboutUs() {
                                                         children: member.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 185,
+                                                        lineNumber: 192,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1498,19 +1511,19 @@ function AboutUs() {
                                                         children: member.role
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 193,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/about.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 191,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 166,
+                                        lineNumber: 173,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1518,7 +1531,7 @@ function AboutUs() {
                                         children: member.bio
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 197,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1529,7 +1542,7 @@ function AboutUs() {
                                                 children: "Expertise"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/about.tsx",
-                                                lineNumber: 195,
+                                                lineNumber: 202,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1539,41 +1552,41 @@ function AboutUs() {
                                                         children: skill
                                                     }, skillIndex, false, {
                                                         fileName: "[project]/src/app/about.tsx",
-                                                        lineNumber: 198,
+                                                        lineNumber: 205,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/about.tsx",
-                                                lineNumber: 196,
+                                                lineNumber: 203,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/about.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 201,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/about.tsx",
-                                lineNumber: 165,
+                                lineNumber: 172,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, index, true, {
                         fileName: "[project]/src/app/about.tsx",
-                        lineNumber: 157,
+                        lineNumber: 164,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/about.tsx",
-                lineNumber: 155,
+                lineNumber: 162,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/about.tsx",
-        lineNumber: 36,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }

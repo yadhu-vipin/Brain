@@ -1,70 +1,51 @@
 const path = require("path");
-const fs = require("fs");
-const https = require("https");
 const ort = require("onnxruntime-node");
-const sharp = require("sharp"); // For image preprocessing
-
-// Dropbox direct download link for model.onnx
-const MODEL_URL = "https://www.dropbox.com/scl/fi/xo5kj3k9i5efwvo0gbm8o/model.onnx?rlkey=17q50mqzi1kd8wsoqu9bm1vq8&st=0zh4mbgf&dl=0";
+const sharp = require("sharp");
 
 // Class labels
-const CLASSES = ["no_tumor", "glioma", "meningioma", "pituitary"];
-
-// Function to download the model from Dropbox
-async function downloadModel(localPath) {
-  return new Promise((resolve, reject) => {
-    if (fs.existsSync(localPath)) {
-      console.log(`Model already exists at ${localPath}`);
-      resolve();
-      return;
-    }
-    console.log(`Downloading model from ${MODEL_URL}`);
-    const file = fs.createWriteStream(localPath);
-    https
-      .get(MODEL_URL, (response) => {
-        response.pipe(file);
-        file.on("finish", () => {
-          file.close(resolve);
-        });
-      })
-      .on("error", (err) => {
-        fs.unlink(localPath, () => reject(err)); // Delete partial file on error
-        console.error("Failed to download the model:", err.message);
-      });
-  });
-}
+const CLASSES = ["Glioma Tumor", "Meningioma Tumor", "No Tumor", "Pituitary Tumor"];
 
 // Load and preprocess the image
 async function preprocessImage(base64Image) {
   const imageBuffer = Buffer.from(base64Image, "base64");
 
-  // Preprocess image using Sharp
+  // Preprocess image using Sharp to match PyTorch transforms
   const resizedImage = await sharp(imageBuffer)
     .resize(224, 224) // Resize to 224x224
-    .toFormat("jpeg")
     .raw()
     .toBuffer();
 
-  // Normalize pixel values (same as in model.py)
+  // Convert to RGB format and normalize using the same values as PyTorch
   const mean = [0.485, 0.456, 0.406];
   const std = [0.229, 0.224, 0.225];
-  const floatArray = new Float32Array(224 * 224 * 3);
-
-  for (let i = 0; i < floatArray.length; i += 3) {
-    floatArray[i] = (resizedImage[i] / 255 - mean[0]) / std[0]; // R channel
-    floatArray[i + 1] = (resizedImage[i + 1] / 255 - mean[1]) / std[1]; // G channel
-    floatArray[i + 2] = (resizedImage[i + 2] / 255 - mean[2]) / std[2]; // B channel
+  const floatArray = new Float32Array(3 * 224 * 224);
+  
+  // Convert RGB pixel values to tensor format
+  // Note: sharp gives us RGB values in a flat array, we need to reformat to CHW
+  for (let y = 0; y < 224; y++) {
+    for (let x = 0; x < 224; x++) {
+      const pixelIndex = (y * 224 + x) * 3;
+      
+      // In PyTorch/ONNX format we need CHW instead of HWC
+      // R channel
+      floatArray[0 * 224 * 224 + y * 224 + x] = 
+        (resizedImage[pixelIndex] / 255.0 - mean[0]) / std[0];
+      // G channel
+      floatArray[1 * 224 * 224 + y * 224 + x] = 
+        (resizedImage[pixelIndex + 1] / 255.0 - mean[1]) / std[1];
+      // B channel
+      floatArray[2 * 224 * 224 + y * 224 + x] = 
+        (resizedImage[pixelIndex + 2] / 255.0 - mean[2]) / std[2];
+    }
   }
 
-  return Float32Array.from(floatArray);
+  return floatArray;
 }
 
 // Predict using ONNX model
 async function predict(base64Image) {
-  const modelPath = path.join(__dirname, "model.onnx"); // Local path for the model
-
-  // Download the model if it doesn't exist locally
-  await downloadModel(modelPath);
+  // Use absolute path to reference model.onnx in the project root
+  const modelPath = path.resolve(__dirname, "../../model.onnx");
 
   // Load ONNX model
   const session = await ort.InferenceSession.create(modelPath);

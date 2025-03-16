@@ -9,5 +9,10 @@
 [functions]
   node_bundler = "esbuild"
 
+[functions.predict]
+  included_files = [
+    "model.onnx"
+  ]
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
